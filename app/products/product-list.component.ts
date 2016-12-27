@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
         },
         {
             "productId": 5,
-            "productName": "Hammer",
+            "productName": "Wammer",
             "productCode": "TBX-0048",
             "releaseDate": "May 21, 2016",
             "description": "Curved claw steel hammer",
@@ -37,7 +37,7 @@ export class ProductListComponent implements OnInit {
         },
         {
             "productId": 7,
-            "productName": "Wammer",
+            "productName": "Hammer",
             "productCode": "TBX-0048",
             "releaseDate": "May 21, 2016",
             "description": "Curved claw steel hammer",
@@ -50,6 +50,18 @@ export class ProductListComponent implements OnInit {
         this.showImage = !this.showImage;
     }
     ngOnInit(): void {
+
+
+        function compare(a, b) {
+            if (a.productName < b.productName)
+                return -1;
+            if (a.productName > b.productName)
+                return 1;
+            return 0;
+        }
+
+        this.products.sort(compare);
+
         console.log('in onInit');
     }
 }

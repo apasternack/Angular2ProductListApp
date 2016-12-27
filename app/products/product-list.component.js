@@ -29,7 +29,7 @@ var ProductListComponent = (function () {
             },
             {
                 "productId": 5,
-                "productName": "Hammer",
+                "productName": "Wammer",
                 "productCode": "TBX-0048",
                 "releaseDate": "May 21, 2016",
                 "description": "Curved claw steel hammer",
@@ -39,7 +39,7 @@ var ProductListComponent = (function () {
             },
             {
                 "productId": 7,
-                "productName": "Wammer",
+                "productName": "Hammer",
                 "productCode": "TBX-0048",
                 "releaseDate": "May 21, 2016",
                 "description": "Curved claw steel hammer",
@@ -53,6 +53,14 @@ var ProductListComponent = (function () {
         this.showImage = !this.showImage;
     };
     ProductListComponent.prototype.ngOnInit = function () {
+        function compare(a, b) {
+            if (a.productName < b.productName)
+                return -1;
+            if (a.productName > b.productName)
+                return 1;
+            return 0;
+        }
+        this.products.sort(compare);
         console.log('in onInit');
     };
     return ProductListComponent;
