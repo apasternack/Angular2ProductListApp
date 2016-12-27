@@ -36,6 +36,16 @@ var ProductListComponent = (function () {
                 "price": 8.9,
                 "starRating": 4.8,
                 "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+            },
+            {
+                "productId": 7,
+                "productName": "Wammer",
+                "productCode": "TBX-0048",
+                "releaseDate": "May 21, 2016",
+                "description": "Curved claw steel hammer",
+                "price": 8.9,
+                "starRating": 4.8,
+                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
             }
         ];
     }
@@ -47,7 +57,8 @@ var ProductListComponent = (function () {
 ProductListComponent = __decorate([
     core_1.Component({
         selector: 'pm-products',
-        templateUrl: 'app/products/product-list.component.html'
+        templateUrl: 'app/products/product-list.component.html',
+        styleUrls: ['app/products/product-list.component.css']
     }),
     __metadata("design:paramtypes", [])
 ], ProductListComponent);
