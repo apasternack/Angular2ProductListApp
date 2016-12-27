@@ -13,6 +13,7 @@ export class ProductListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
+    sortDescendingOrder: boolean = false;
     listFilter: string = 'cart';
     products: IProduct[] = [  // in many cases here we would communicate with a backend server
         {
@@ -49,10 +50,21 @@ export class ProductListComponent implements OnInit {
     toggleImage(): void {
         this.showImage = !this.showImage;
     }
-    ngOnInit(): void {
+    toggleSortOrder(): void {
 
+        if (this.sortDescendingOrder) this.products.sort(sortAZ);
+        else this.products.sort(sortZA);
 
-        function compare(a, b) {
+        this.sortDescendingOrder = !this.sortDescendingOrder;
+
+        function sortZA(b, a) {
+            if (a.productName < b.productName)
+                return -1;
+            if (a.productName > b.productName)
+                return 1;
+            return 0;
+        }
+        function sortAZ(a, b) {
             if (a.productName < b.productName)
                 return -1;
             if (a.productName > b.productName)
@@ -60,8 +72,23 @@ export class ProductListComponent implements OnInit {
             return 0;
         }
 
-        this.products.sort(compare);
+
+
+    }
+    ngOnInit(): void {
+
+
+        function sortAZ(a, b) {
+            if (a.productName < b.productName)
+                return -1;
+            if (a.productName > b.productName)
+                return 1;
+            return 0;
+        }
+
+        this.products.sort(sortAZ);
 
         console.log('in onInit');
     }
+
 }

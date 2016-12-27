@@ -15,6 +15,7 @@ var ProductListComponent = (function () {
         this.imageWidth = 50;
         this.imageMargin = 2;
         this.showImage = false;
+        this.sortDescendingOrder = false;
         this.listFilter = 'cart';
         this.products = [
             {
@@ -52,15 +53,36 @@ var ProductListComponent = (function () {
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
     };
-    ProductListComponent.prototype.ngOnInit = function () {
-        function compare(a, b) {
+    ProductListComponent.prototype.toggleSortOrder = function () {
+        if (this.sortDescendingOrder)
+            this.products.sort(sortAZ);
+        else
+            this.products.sort(sortZA);
+        this.sortDescendingOrder = !this.sortDescendingOrder;
+        function sortZA(b, a) {
             if (a.productName < b.productName)
                 return -1;
             if (a.productName > b.productName)
                 return 1;
             return 0;
         }
-        this.products.sort(compare);
+        function sortAZ(a, b) {
+            if (a.productName < b.productName)
+                return -1;
+            if (a.productName > b.productName)
+                return 1;
+            return 0;
+        }
+    };
+    ProductListComponent.prototype.ngOnInit = function () {
+        function sortAZ(a, b) {
+            if (a.productName < b.productName)
+                return -1;
+            if (a.productName > b.productName)
+                return 1;
+            return 0;
+        }
+        this.products.sort(sortAZ);
         console.log('in onInit');
     };
     return ProductListComponent;
