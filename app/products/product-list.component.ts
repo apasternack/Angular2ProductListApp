@@ -57,22 +57,20 @@ export class ProductListComponent implements OnInit {
 
         this.sortDescendingOrder = !this.sortDescendingOrder;
 
-        function sortZA(b, a) {
+        function sortZA(b: IProduct, a: IProduct) {
             if (a.productName < b.productName)
                 return -1;
             if (a.productName > b.productName)
                 return 1;
             return 0;
         }
-        function sortAZ(a, b) {
+        function sortAZ(a: IProduct, b: IProduct) {
             if (a.productName < b.productName)
                 return -1;
             if (a.productName > b.productName)
                 return 1;
             return 0;
         }
-
-
 
     }
     ngOnInit(): void {
