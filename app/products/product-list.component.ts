@@ -45,6 +45,26 @@ export class ProductListComponent implements OnInit {
             "price": 8.9,
             "starRating": 4.8,
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+        },
+        {
+            "productId": 17,
+            "productName": "10cade",
+            "productCode": "TBX-0048",
+            "releaseDate": "May 21, 2016",
+            "description": "Curved claw steel hammer",
+            "price": 8.9,
+            "starRating": 4.8,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+        },
+        {
+            "productId": 87,
+            "productName": "2moo",
+            "productCode": "TBX-0048",
+            "releaseDate": "May 21, 2016",
+            "description": "Curved claw steel hammer",
+            "price": 8.9,
+            "starRating": 4.8,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
         }
     ];
     toggleImage(): void {
@@ -76,7 +96,7 @@ export class ProductListComponent implements OnInit {
     ngOnInit(): void {
 
 
-        function sortAZ(a, b) {
+        function sortAZ(a: IProduct, b: IProduct) {
             if (a.productName < b.productName)
                 return -1;
             if (a.productName > b.productName)
