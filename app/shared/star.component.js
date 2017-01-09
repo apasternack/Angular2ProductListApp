@@ -12,9 +12,13 @@ var core_1 = require("@angular/core");
 var StarComponent = (function () {
     function StarComponent() {
         this.rating = 4;
+        this.notify = new EventEmitter();
     }
     StarComponent.prototype.ngOnChanges = function () {
         this.starWidth = this.rating * (86 / 5);
+    };
+    StarComponent.prototype.onClick = function () {
+        this.notify.emit('clicked!');
     };
     return StarComponent;
 }());
@@ -22,6 +26,10 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", Number)
 ], StarComponent.prototype, "rating", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], StarComponent.prototype, "notify", void 0);
 StarComponent = __decorate([
     core_1.Component({
         selector: 'ai-star',
