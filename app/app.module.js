@@ -35,4 +35,6 @@ AppModule = __decorate([
     __metadata("design:paramtypes", [])
 ], AppModule);
 exports.AppModule = AppModule;
+//(click)='sortAZ()'
+//    private userGroups: IUserGroup[] = [];
 //# sourceMappingURL=app.module.js.map

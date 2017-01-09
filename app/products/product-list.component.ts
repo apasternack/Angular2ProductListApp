@@ -17,16 +17,6 @@ export class ProductListComponent implements OnInit {
     listFilter: string = 'cart';
     products: IProduct[] = [  // in many cases here we would communicate with a backend server
         {
-            "productId": 2,
-            "productName": "Garden Cart",
-            "productCode": "GDN-0023",
-            "releaseDate": "March 18, 2016",
-            "description": "15 gallon capacity rolling garden cart",
-            "price": 32.99,
-            "starRating": 4.2,
-            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
-        },
-        {
             "productId": 5,
             "productName": "Wammer",
             "productCode": "TBX-0048",
@@ -35,6 +25,16 @@ export class ProductListComponent implements OnInit {
             "price": 8.9,
             "starRating": 4.8,
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+        },
+        {
+            "productId": 2,
+            "productName": "Garden Cart",
+            "productCode": "GDN-0023",
+            "releaseDate": "March 18, 2016",
+            "description": "15 gallon capacity rolling garden cart",
+            "price": 32.99,
+            "starRating": 4.2,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
         },
         {
             "productId": 7,
@@ -106,7 +106,6 @@ export class ProductListComponent implements OnInit {
 
         this.products.sort(sortAZ);
 
-        console.log('in onInit');
     }
 
 }

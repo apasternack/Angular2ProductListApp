@@ -19,3 +19,7 @@ import { ProductFilterPipe } from './products/product-filter.pipe';
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
+
+
+//(click)='sortAZ()'
+//    private userGroups: IUserGroup[] = [];
