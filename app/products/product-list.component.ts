@@ -23,7 +23,7 @@ export class ProductListComponent implements OnInit {
             "releaseDate": "May 21, 2016",
             "description": "Curved claw steel hammer",
             "price": 8.9,
-            "starRating": 4.8,
+            "starRating": 2.5,
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
         },
         {
@@ -106,6 +106,10 @@ export class ProductListComponent implements OnInit {
 
         this.products.sort(sortAZ);
 
+    }
+
+    onRatingClicked(message: string): void {
+        this.pageTitle = 'Product List: ' + message;
     }
 
 }

@@ -25,7 +25,7 @@ var ProductListComponent = (function () {
                 "releaseDate": "May 21, 2016",
                 "description": "Curved claw steel hammer",
                 "price": 8.9,
-                "starRating": 4.8,
+                "starRating": 2.5,
                 "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
             },
             {
@@ -103,6 +103,9 @@ var ProductListComponent = (function () {
             return 0;
         }
         this.products.sort(sortAZ);
+    };
+    ProductListComponent.prototype.onRatingClicked = function (message) {
+        this.pageTitle = 'Product List: ' + message;
     };
     return ProductListComponent;
 }());
