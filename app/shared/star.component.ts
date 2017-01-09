@@ -1,15 +1,15 @@
-import { Compenent, OnChanges } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 
-@Compenent({
+@Component({
     selector: 'ai-star',
-    templateURL: 'app/shared/star.component.html',
+    templateUrl: 'app/shared/star.component.html',
     styleUrls: ['app/shared/star.component.css']
 })
 
 
 
 export class StarComponent {
-    rating: number = 4;
+    @Input() rating: number = 4;
     starWidth: number;
 
     ngOnChanges(): void {
