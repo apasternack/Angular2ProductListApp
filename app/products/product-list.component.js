@@ -9,66 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var product_service_1 = require("./product.service");
 var ProductListComponent = (function () {
-    function ProductListComponent() {
+    function ProductListComponent(_productService) {
+        this._productService = _productService;
         this.pageTitle = 'Product List';
         this.imageWidth = 50;
         this.imageMargin = 2;
         this.showImage = false;
         this.sortDescendingOrder = false;
-        this.listFilter = 'cart';
-        this.products = [
-            {
-                "productId": 5,
-                "productName": "Wammer",
-                "productCode": "TBX-0048",
-                "releaseDate": "May 21, 2016",
-                "description": "Curved claw steel hammer",
-                "price": 8.9,
-                "starRating": 2.5,
-                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
-            },
-            {
-                "productId": 2,
-                "productName": "Garden Cart",
-                "productCode": "GDN-0023",
-                "releaseDate": "March 18, 2016",
-                "description": "15 gallon capacity rolling garden cart",
-                "price": 32.99,
-                "starRating": 4.2,
-                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
-            },
-            {
-                "productId": 7,
-                "productName": "Hammer",
-                "productCode": "TBX-0048",
-                "releaseDate": "May 21, 2016",
-                "description": "Curved claw steel hammer",
-                "price": 8.9,
-                "starRating": 4.8,
-                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
-            },
-            {
-                "productId": 17,
-                "productName": "10cade",
-                "productCode": "TBX-0048",
-                "releaseDate": "May 21, 2016",
-                "description": "Curved claw steel hammer",
-                "price": 8.9,
-                "starRating": 4.8,
-                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
-            },
-            {
-                "productId": 87,
-                "productName": "2moo",
-                "productCode": "TBX-0048",
-                "releaseDate": "May 21, 2016",
-                "description": "Curved claw steel hammer",
-                "price": 8.9,
-                "starRating": 4.8,
-                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
-            }
-        ];
     }
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
@@ -95,6 +44,7 @@ var ProductListComponent = (function () {
         }
     };
     ProductListComponent.prototype.ngOnInit = function () {
+        this.products = this._productService.getProducts();
         function sortAZ(a, b) {
             if (a.productName < b.productName)
                 return -1;
@@ -115,7 +65,7 @@ ProductListComponent = __decorate([
         templateUrl: 'app/products/product-list.component.html',
         styleUrls: ['app/products/product-list.component.css']
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [product_service_1.ProductService])
 ], ProductListComponent);
 exports.ProductListComponent = ProductListComponent;
 //# sourceMappingURL=product-list.component.js.map
