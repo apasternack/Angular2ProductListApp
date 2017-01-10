@@ -54,8 +54,10 @@ export class ProductListComponent implements OnInit {
     ngOnInit(): void {
 
         this._productService.getProducts()
-                .subscribe(products => this.products = products,
-                            error => this.errorMessage = <any>error);
+                .subscribe(
+                    products => this.products = products,
+                    error => this.errorMessage = <any>error
+                );
 
         function sortAZ(a: IProduct, b: IProduct) {
             if (a.productName < b.productName)
