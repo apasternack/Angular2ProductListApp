@@ -17,6 +17,7 @@ export class ProductListComponent implements OnInit {
     sortDescendingOrder: boolean = false;
     listFilter: string;
     products: IProduct[];
+    errorMessage: string;
 
     constructor(private _productService: ProductService) {
 
@@ -52,7 +53,9 @@ export class ProductListComponent implements OnInit {
     }
     ngOnInit(): void {
 
-        this.products = this._productService.getProducts();
+        this._productService.getProducts()
+                .subscribe(products => this.products = products,
+                            error => this.errorMessage = <any>error);
 
         function sortAZ(a: IProduct, b: IProduct) {
             if (a.productName < b.productName)
@@ -62,7 +65,7 @@ export class ProductListComponent implements OnInit {
             return 0;
         }
 
-        this.products.sort(sortAZ);
+        // this.products.sort(sortAZ);
 
     }
 

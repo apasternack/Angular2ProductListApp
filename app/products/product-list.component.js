@@ -44,7 +44,9 @@ var ProductListComponent = (function () {
         }
     };
     ProductListComponent.prototype.ngOnInit = function () {
-        this.products = this._productService.getProducts();
+        var _this = this;
+        this._productService.getProducts()
+            .subscribe(function (products) { return _this.products = products; }, function (error) { return _this.errorMessage = error; });
         function sortAZ(a, b) {
             if (a.productName < b.productName)
                 return -1;
@@ -52,7 +54,7 @@ var ProductListComponent = (function () {
                 return 1;
             return 0;
         }
-        this.products.sort(sortAZ);
+        // this.products.sort(sortAZ);
     };
     ProductListComponent.prototype.onRatingClicked = function (message) {
         this.pageTitle = 'Product List: ' + message;
