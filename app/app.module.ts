@@ -29,7 +29,9 @@ import { StarComponent } from './shared/star.component';
     AppComponent,
     ProductListComponent,
     ProductFilterPipe,
-    StarComponent
+    StarComponent,
+    ProductDetailComponent,
+    WelcomeComponent
   ],
   bootstrap: [ AppComponent ]
 })

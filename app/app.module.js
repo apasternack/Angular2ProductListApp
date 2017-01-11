@@ -42,7 +42,9 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             product_list_component_1.ProductListComponent,
             product_filter_pipe_1.ProductFilterPipe,
-            star_component_1.StarComponent
+            star_component_1.StarComponent,
+            product_detail_component_1.ProductDetailComponent,
+            welcome_component_1.WelcomeComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     }),
