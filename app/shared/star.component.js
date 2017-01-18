@@ -35,8 +35,7 @@ StarComponent = __decorate([
         selector: 'ai-star',
         templateUrl: 'app/shared/star.component.html',
         styleUrls: ['app/shared/star.component.css']
-    }),
-    __metadata("design:paramtypes", [])
+    })
 ], StarComponent);
 exports.StarComponent = StarComponent;
 //# sourceMappingURL=star.component.js.map
