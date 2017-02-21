@@ -9,4 +9,8 @@ import { IProduct } from './product';
 export class ProductDetailComponent {
     pageTitle: string = 'Product Detail';
     product: IProduct;
+
+    constructor(private _route: ActivatedRoute) {
+        
+    }
 }
