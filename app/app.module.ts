@@ -21,7 +21,7 @@ import { StarComponent } from './shared/star.component';
     RouterModule.forRoot([
       { path: 'products', component: ProductListComponent },
       { path: 'product/:id',
-
+        canActivate: [ ProductDetailGuard ]
         component: ProductDetailComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
