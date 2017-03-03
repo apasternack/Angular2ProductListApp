@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { ProductModule } from './products/product.module';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent }  from './app.component';
@@ -14,7 +15,8 @@ import { WelcomeComponent } from './home/welcome.component';
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' } // often this can be used to be directed to a 404 cannot be found page
-    ])
+    ]),
+    ProductModule
   ],
   declarations: [
     AppComponent,
