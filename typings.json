@@ -1,3 +1,5 @@
+//this config file tells typescript what/where to get typings files (filename.d.ts)
+
 {
   "globalDependencies": {
     "core-js": "registry:dt/core-js#0.0.0+20160725163759",
