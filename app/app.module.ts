@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { ProductModule } from './products/product.module';
 import { AppRoutingModule } from './shared/app-routing.module';
+import { ProductRoutingModule } from './shared/product-routing.module';
 
 import { AppComponent }  from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
@@ -12,7 +13,8 @@ import { WelcomeComponent } from './home/welcome.component';
     BrowserModule,
     HttpModule,
     ProductModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProductRoutingModule
   ],
   declarations: [
     AppComponent,

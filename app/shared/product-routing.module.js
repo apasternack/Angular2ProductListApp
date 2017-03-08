@@ -6,27 +6,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var product_list_component_1 = require("../products/product-list.component");
-var product_guard_service_1 = require("../products/product-guard.service");
-var product_detail_component_1 = require("../products/product-detail.component");
 var ProductRoutingModule = (function () {
     function ProductRoutingModule() {
     }
     return ProductRoutingModule;
 }());
 ProductRoutingModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            router_1.RouterModule.forChild([
-                { path: 'products', component: product_list_component_1.ProductListComponent },
-                { path: 'product/:id',
-                    canActivate: [product_guard_service_1.ProductDetailGuard],
-                    component: product_detail_component_1.ProductDetailComponent },
-            ])
-        ],
-        exports: [router_1.RouterModule]
-    })
+    core_1.NgModule({})
 ], ProductRoutingModule);
 exports.ProductRoutingModule = ProductRoutingModule;
-//# sourceMappingURL=products-routing.module.js.map
+//# sourceMappingURL=product-routing.module.js.map
