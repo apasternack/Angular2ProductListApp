@@ -17,13 +17,7 @@ import { SharedModule } from '../shared/shared.module';
         ProductFilterPipe
     ],
     imports: [
-        SharedModule,
-        RouterModule.forChild([
-                  { path: 'products', component: ProductListComponent },
-      { path: 'product/:id',
-        canActivate: [ ProductDetailGuard ],
-        component: ProductDetailComponent },
-        ])
+        SharedModule
     ],
     providers: [
         ProductService,
