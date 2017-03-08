@@ -9,7 +9,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
 var product_module_1 = require("./products/product.module");
-var router_1 = require("@angular/router");
+var app_routing_module_1 = require("./shared/app-routing.module");
 var app_component_1 = require("./app.component");
 var welcome_component_1 = require("./home/welcome.component");
 var AppModule = (function () {
@@ -22,12 +22,8 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             http_1.HttpModule,
-            router_1.RouterModule.forRoot([
-                { path: 'welcome', component: welcome_component_1.WelcomeComponent },
-                { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-                { path: '**', redirectTo: 'welcome', pathMatch: 'full' } // often this can be used to be directed to a 404 cannot be found page
-            ]),
-            product_module_1.ProductModule
+            product_module_1.ProductModule,
+            app_routing_module_1.AppRoutingModule
         ],
         declarations: [
             app_component_1.AppComponent,
